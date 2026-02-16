@@ -27,7 +27,7 @@ export default function Navbar() {
         ,
       }}
     >
-      <Link to="/">Calendar</Link>
+      <Link to="/calendar">Calendar</Link>
 
       {user ? (
         <div>

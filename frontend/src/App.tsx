@@ -22,6 +22,7 @@ export default function App() {
             element={
               <RequireAuth>
                 <Home />
+                <Route path="/calendar"></Route>
               </RequireAuth>
             }
           />

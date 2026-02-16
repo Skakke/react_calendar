@@ -15,7 +15,7 @@ export default function Login() {
   const { setUser } = useAuth();
 
   const state = location.state as LocationState | null;
-  const from = state?.from?.pathname || "/";
+  const from = state?.from?.pathname || "/calendar";
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
