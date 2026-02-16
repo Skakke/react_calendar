@@ -4,6 +4,6 @@ sqlalchemy
 dotenv
 python-jose[cryptography]
 pyodbc
-passlib
-bcrypt
 python-multipart
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1

@@ -32,10 +32,10 @@ export default function Login() {
   };
 
   return (
-    <div style={{ maxWidth: 360, margin: "60px auto" }}>
+    <div style={{ maxWidth: 360, margin: "60px auto",}}>
       <h2>Login</h2>
       <form onSubmit={onSubmit}>
-        <div style={{ marginBottom: 10 }}>
+        <div style={{ marginBottom: 10, alignItems: "center" }}>
           <label>Username</label>
           <input
             value={username}

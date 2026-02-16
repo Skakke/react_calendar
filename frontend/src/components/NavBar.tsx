@@ -5,6 +5,7 @@ import { clearToken } from "../api/auth";
 export default function Navbar() {
   const { user, setUser } = useAuth();
   const navigate = useNavigate();
+  
 
   const logout = () => {
     clearToken();
@@ -15,13 +16,15 @@ export default function Navbar() {
   return (
     <div
       style={{
+        position: "fixed", "top": 0,
         width: "100%",
         padding: "10px 20px",
         background: "#f5f5f5",
         borderBottom: "1px solid #ddd",
         display: "flex",
         justifyContent: "space-between",
-        alignItems: "center",
+        alignItems: "center"
+        ,
       }}
     >
       <Link to="/">Calendar</Link>

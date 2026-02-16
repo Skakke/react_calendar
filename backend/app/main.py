@@ -51,6 +51,9 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
     token = create_access_token(subject=user.username)
     return {"access_token": token, "token_type": "bearer"}
 
+    print("Password received:", form_data.password)
+    print("Length:", len(form_data.password))
+
 @app.get("/api/auth/me", response_model=UserOut)
 def me(current_user: User = Depends(get_current_user)):
     return current_user
