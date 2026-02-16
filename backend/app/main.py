@@ -8,16 +8,14 @@ from app.deps import get_db, get_current_user
 from app.models import User
 from app.schemas import UserCreate, TokenResponse, UserOut
 from app.security import hash_password, verify_password, create_access_token
-from app.routers import auth
 
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
-app.include_router(auth.router)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "10.0.0.25:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

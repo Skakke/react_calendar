@@ -1,2 +1,9 @@
 fastapi
 uvicorn[standard]
+sqlalchemy
+dotenv
+python-jose[cryptography]
+pyodbc
+passlib
+bcrypt
+python-multipart

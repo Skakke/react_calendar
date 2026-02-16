@@ -1,17 +1,30 @@
 import React from "react";
-import AppNavBar from "./components/NavBar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./auth/AuthContext";
+import RequireAuth from "./auth/RequireAuth";
+import Navbar from "./components/NavBar";
+import Login from "./pages/Login";
 
-const App: React.FC = () => {
+
+export default function App() {
   return (
-    <>
-      <AppNavBar brand="ToDO WEB" />
+    <AuthProvider>
+      <BrowserRouter>
+        <Navbar /> {/* 👈 Always visible */}
 
-      <main style={{ padding: "20px" }}>
-        <h1>Welcome to the Calendar App</h1>
-        <p>This is your main page content.</p>
-      </main>
-    </>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+
+          <Route
+            path="/"
+            element={
+              <RequireAuth>
+              
+              </RequireAuth>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
-};
-
-export default App;
+}
