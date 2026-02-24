@@ -8,14 +8,20 @@ const events = [
 
 export default function Calendar() {
   return (
-    <div style={{ padding: 20}  }>
+    <div
+      style={{
+        padding: 20,
+        maxWidth: 1400,
+        margin: "0 auto"
+      }}
+    >
       <h1>Calendar</h1>
 
       <FullCalendar
         plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
-        height={800}
-        
+        aspectRatio={1.8}
+        expandRows={true}
         weekends={false}
         events={events}
         eventContent={renderEventContent}
